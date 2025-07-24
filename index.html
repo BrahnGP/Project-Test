@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Expense Tracker Dashboard</title>
+  </head>
+  <body>
+    <main id="dashboard">
+      <section id="summary">
+        <h1>MY EXPENSE TRACKER</h1>
+
+        <p class="balance">Current Balance: <span id="current-balance">$1,247.50</span></p>
+
+        <p class="monthly-spend">This Month: Spent <span id="monthly-spent">$520</span> / Budget <span id="monthly-budget">$600</span></p>
+
+        <div class="progress" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="87" aria-label="Monthly budget used">
+          <div class="progress-bar" id="progress-bar"></div>
+          <span class="progress-text" id="progress-text">87% used</span>
+        </div>
+      </section>
+
+      <section id="quick-status">
+        <h2>QUICK BUDGET STATUS</h2>
+        <ul class="category-status-list">
+          <li class="category-status-item">
+            <span class="icon">🍕</span>
+            Food: <span class="amount" data-cat="food">$180/$200</span>
+            <span class="state ok">✅ On track</span>
+          </li>
+          <li class="category-status-item">
+            <span class="icon">🎮</span>
+            Fun: <span class="amount" data-cat="fun">$75/$100</span>
+            <span class="state good">✅ Good</span>
+          </li>
+          <li class="category-status-item">
+            <span class="icon">🚌</span>
+            Transport: <span class="amount" data-cat="transport">$85/$80</span>
+            <span class="state over">⚠️ Over budget!</span>
+          </li>
+        </ul>
+      </section>
+
+      <section id="recent-expenses">
+        <h2>RECENT EXPENSES</h2>
+        <ul class="expense-list">
+          <li class="expense-item">
+            <span class="price">$5.50</span>
+            <span class="title">Coffee Shop</span>
+            <span class="category">Food</span>
+            <time datetime="2025-07-23">Today</time>
+          </li>
+          <li class="expense-item">
+            <span class="price">$12.00</span>
+            <span class="title">Bus Pass</span>
+            <span class="category">Transport</span>
+            <time datetime="2025-07-22">Yest.</time>
+          </li>
+          <li class="expense-item">
+            <span class="price">$45.00</span>
+            <span class="title">Movie Night</span>
+            <span class="category">Entertainment</span>
+            <time datetime="2025-07-20">—</time>
+          </li>
+        </ul>
+      </section>
+
+      <nav id="actions">
+        <a href="add-expense.html" id="add-expense">Add Expense</a>
+        <a href="budget.html" id="set-budget">Set Budget</a>
+        <a href="#" id="view-all">View All</a>
+      </nav>
+    </main>
+  </body>
+</html>
