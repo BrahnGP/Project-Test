@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Budget Manager</title>
+  </head>
+  <body>
+    <main id="budget-manager">
+      <h1>BUDGET MANAGER</h1>
+
+      <section id="monthly-income">
+        <label for="income">Monthly Income: $</label>
+        <input type="number" id="income" name="income" step="0.01" min="0" value="800.00" />
+      </section>
+
+      <section id="category-budgets">
+        <h2>SET CATEGORY BUDGETS</h2>
+
+        <article class="category" data-cat="food">
+          <header>
+            <span class="icon">🍕</span>
+            <h3>Food &amp; Dining</h3>
+          </header>
+          <p>Budget: $<input type="number" class="budget-input" value="200" />　 Spent: $<span class="spent">180</span></p>
+
+          <div class="progress" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="90">
+            <div class="progress-bar"></div>
+            <span class="progress-text">90%</span>
+          </div>
+          <p class="remaining">Remaining: <span>$20</span></p>
+        </article>
+
+        <article class="category" data-cat="transport">
+          <header>
+            <span class="icon">🚌</span>
+            <h3>Transportation</h3>
+          </header>
+          <p>Budget: $<input type="number" class="budget-input" value="80" />　 Spent: $<span class="spent">85</span></p>
+
+          <div class="progress" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="106">
+            <div class="progress-bar"></div>
+            <span class="progress-text">106%</span>
+          </div>
+          <p class="over">Over by: $<span>5</span> ⚠️</p>
+        </article>
+      </section>
+
+      <nav id="budget-actions">
+        <button id="update-budgets">Update Budgets</button>
+        <button id="reset-all">Reset All</button>
+        <a href="reports.html" id="reports-link">Reports</a>
+      </nav>
+    </main>
+  </body>
+</html>
