@@ -13,11 +13,12 @@
       <h1>MY EXPENSE TRACKER</h1>
 
       <p class="balance">
-        Current Balance: $<span id="current-balance">2000</span>
+        Initial Balance: $<span id="initial-balance">0</span><br>
+        Current Balance: $<span id="current-balance"></span>
       </p>
 
-      <p class="monthly-spend">       
-       
+      <p class="monthly-spend">
+
       </p>
 
       <div class="progress" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="87"
@@ -32,17 +33,22 @@
       <ul class="category-status-list">
         <li class="category-status-item">
           <span class="icon">🍕</span>
-          Food: <span class="amount" data-cat="food">$180/$200</span>
+          Food & Dining: <span class="amount" id="food-span" data-cat="food">$180/$200</span>
           <span class="state ok">✅ On track</span>
         </li>
         <li class="category-status-item">
+          <span class="icon">🚌</span>
+          Transportation: <span class="amount" id="transportation-span" data-cat="transport">$85/$80</span>
+          <span class="state over">⚠️ Over budget!</span>
+        </li>
+        <li class="category-status-item">
           <span class="icon">🎮</span>
-          Fun: <span class="amount" data-cat="fun">$75/$100</span>
-          <span class="state good">✅ Good</span>
+          Enterteiment: <span class="amount" id="enterteiment-span" data-cat="enterteiment">$85/$80</span>
+          <span class="state over">⚠️ Over budget!</span>
         </li>
         <li class="category-status-item">
           <span class="icon">🚌</span>
-          Transport: <span class="amount" data-cat="transport">$85/$80</span>
+          Other: <span class="amount" id="other-span" data-cat="other">$85/$80</span>
           <span class="state over">⚠️ Over budget!</span>
         </li>
       </ul>
