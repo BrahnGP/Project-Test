@@ -4,9 +4,24 @@ window.addEventListener("load", function () {
 
     const savedItems = JSON.parse(localStorage.getItem("expenseItems") || "[]");
 
+    const budgetItems = JSON.parse(localStorage.getItem("budgetItems") || "[]");
+    console.log(budgetItems);
+    let listBudget = document.querySelector("#current-balance");
+
+
+    budgetItems.forEach((item) => {
+    listBudget.textContent = item.income;        
+    });
+
+
+
+    //
+
+
     const $list = document.querySelector(".expense-list");
     $list.innerHTML = "";
 
+    console.log("list expenses" + $list);
 
     savedItems.forEach((item) => {
         const li = document.createElement("li");
@@ -19,6 +34,8 @@ window.addEventListener("load", function () {
     `;
         $list.appendChild(li);
     });
+
+
 
     // index.html
     const savedTotal = localStorage.getItem("totalAmount") || "0.00";

@@ -50,9 +50,8 @@ function addInformation() {
 
 function cancelarFormulario() {
     console.log("cancelando y guardando datos...");
-
     const items = [];
-    document.querySelectorAll(".expense-list").forEach((item) => {
+    document.querySelectorAll(".expense-list .expense-item").forEach((item) => {
         const amount = item.querySelector(".price").textContent.replace(/.*Price:\s*/, '');
         const description = item.querySelector(".title").textContent.replace(/.*Description:\s*/, '');
         const category = item.querySelector(".category").textContent.replace(/.*Category:\s*/, '');
