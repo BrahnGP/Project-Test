@@ -144,7 +144,7 @@ window.addEventListener("load", function () {
                 break;
             case "Entertainment":
                 icon = "🎮";
-                defaultBudget = budgetItems[0]?.entertainment ?? 500;
+                defaultBudget = budgetItems[0]?.enterteiment ?? 500;
                 break;
             case "Other":
                 icon = "📦";
@@ -214,8 +214,16 @@ window.addEventListener("load", function () {
 
     let monthlyBudget = budgetItems[0]?.monthlyBudget ?? 500;
 
-    progress.textContent = ((savedTotal / currentBalanceInt) * 100).toFixed(2) + "% used";
+    console.log("saved " + savedTotal)
+    console.log("current" + currentBalanceInt)
 
+    if (currentBalanceInt == 0) {
+        progress.textContent = "0% Negative balance"; // o un mensaje más informativo si prefieres
+        console.log("paso 1")
+    } else {
+        progress.textContent = ((savedTotal / currentBalanceInt) * 100).toFixed(2) + "% used";
+         console.log("paso 2")
+    }
     amount.textContent = "This Month: Spent: $" + savedTotal + " / Budget: " + currentBalanceInt;
 
     console.log("saved " + savedTotal + " current balance " + currentBalanceInt);

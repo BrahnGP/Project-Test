@@ -22,13 +22,13 @@
             <span class="icon">🍕</span>
             <h3>Food &amp; Dining</h3>
           </header>
-          <p>Budget: $<input type="number" id="food-input" class="budget-input" value="200" />　 Spent: $<span id="foodSpend" class="spent">0</span></p>
+          <p>Budget: $<input type="number" id="food-input" class="budget-input" value="0" />　 Spent: $<span id="foodSpend" class="spent">0</span></p>
 
           <div class="progress" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="90">
             <div class="progress-bar"></div>
-            <span class="progress-text">90%</span>
+            <span id="foodProgress" class="progress-text">90%</span>
           </div>
-          <p class="remaining">Remaining: <span>$20</span></p>
+          <p class="remaining">Remaining: $<span id="foodRemaining">0</span></p>
         </article>
 
         <article class="category" data-cat="transport">
@@ -36,13 +36,13 @@
             <span class="icon">🚌</span>
             <h3>Transportation</h3>
           </header>
-          <p>Budget: $<input type="number" id="transportation-input" class="budget-input" value="80" />　 Spent: $<span id="transportationSpend" class="spent">0</span></p>
+          <p>Budget: $<input type="number" id="transportation-input" class="budget-input" value="0" />　 Spent: $<span id="transportationSpend" class="spent">0</span></p>
 
           <div class="progress" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="106">
             <div class="progress-bar"></div>
-            <span class="progress-text">106%</span>
+            <span id="transportationProcess" class="progress-text">106%</span>
           </div>
-          <p class="over">Over by: $<span>5</span> ⚠️</p>
+          <p class="over">Remaining: $<span id="transportationRemaining">0</span> ⚠️</p>
         </article>
 
         <article class="entertainment" data-cat="entertainment">
@@ -50,13 +50,13 @@
             <span class="icon">🚌</span>
             <h3>Enterteiment</h3>
           </header>
-          <p>Budget: $<input type="number" id="enterteiment-input" class="entertainment-input" value="80" />　 Spent: $<span id="enterteimentSpend" class="spent">0</span></p>
+          <p>Budget: $<input type="number" id="enterteiment-input" class="entertainment-input" value="0" />　 Spent: $<span id="enterteimentSpend" class="spent">0</span></p>
 
           <div class="progress" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="106">
             <div class="progress-bar"></div>
-            <span class="progress-text">106%</span>
+            <span id="enterteimentProgress" class="progress-text">106%</span>
           </div>
-          <p class="over">Over by: $<span>5</span> ⚠️</p>
+          <p class="over">Remaining: $<span id="enterteimentRemaining">0</span> ⚠️</p>
         </article>
 
           <article class="other" data-cat="other">
@@ -64,13 +64,13 @@
             <span class="icon">🚌</span>
             <h3>Other</h3>
           </header>
-          <p>Budget: $<input type="number" id="other-input" class="other-input" value="80" />　 Spent: $<span id="otherSpend" class="spent">0</span></p>
+          <p>Budget: $<input type="number" id="other-input" class="other-input" value="0" />　 Spent: $<span id="otherSpend" class="spent">0</span></p>
 
           <div class="progress" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="106">
             <div class="progress-bar"></div>
-            <span class="progress-text">106%</span>
+            <span id="otherProgress" class="progress-text">106%</span>
           </div>
-          <p class="over">Over by: $<span>5</span> ⚠️</p>
+          <p class="over">Remaining: $<span id="otherRemaining">0</span> ⚠️</p>
         </article>
       </section>
 

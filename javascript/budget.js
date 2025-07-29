@@ -31,7 +31,7 @@ window.addEventListener("load", function () {
 
 
     budgetItems.forEach((item) => {
-        console.log(item.income)
+        //console.log(item.income)
         listBudget.value = item.income;
         listFood.value = item.food;
         listTranspotation.value = item.transportation;
@@ -52,6 +52,52 @@ window.addEventListener("load", function () {
     listTranspotationSpend.innerHTML = budgetItemsNew[0]?.transportationCategory ?? 0;
     listEntertaimentSpend.innerHTML = budgetItemsNew[0]?.enterteimentCategory ?? 0;
     listOtherSpend.innerHTML = budgetItemsNew[0]?.otherCategory ?? 0;
+
+    let listFoodProgress = document.querySelector("#foodProgress");
+    let listTranspotationProgress = document.querySelector("#transportationProcess");
+    let listEntertaimentProgress = document.querySelector("#enterteimentProgress");
+    let listOtherProgress = document.querySelector("#otherProgress");
+
+    if (listFood.value == 0) {
+        listFoodProgress.innerHTML = "0% - Negative balance"; // o un mensaje más informativo si prefieres
+        console.log("paso 1")
+    } else {
+        listFoodProgress.innerHTML = (((budgetItemsNew[0]?.foodCategory ?? 0) / listFood.value) * 100).toFixed(2) + "% used";
+    }
+
+    if (listTranspotation.value == 0) {
+        listTranspotationProgress.innerHTML = "0% Negative balance"; // o un mensaje más informativo si prefieres
+    } else {
+        listTranspotationProgress.innerHTML = (((budgetItemsNew[0]?.transportationCategory ?? 0) / listTranspotation.value) * 100).toFixed(2) + "% used";
+    }
+
+
+    if (listEntertaiment.value == 0) {
+        listEntertaimentProgress.innerHTML = "0% Negative balance"; // o un mensaje más informativo si prefieres
+    } else {
+        listEntertaimentProgress.innerHTML = (((budgetItemsNew[0]?.enterteimentCategory ?? 0) / listEntertaiment.value) * 100).toFixed(2) + "% used";
+    }
+
+    if (listOther.value == 0) {
+        listOtherProgress.innerHTML = "0% Negative balance"; // o un mensaje más informativo si prefieres
+    } else {
+        listOtherProgress.innerHTML = (((budgetItemsNew[0]?.otherCategory ?? 0) / listOther.value) * 100).toFixed(2) + "% used";
+    }
+
+
+    console.log(budgetItemsNew[0]?.foodCategory ?? 0)
+    console.log(listFood.value)
+
+    let listfoodRemaining = document.querySelector("#foodRemaining");
+    let listtransportationRemaining = document.querySelector("#transportationRemaining");
+    let listenterteimentRemaining = document.querySelector("#enterteimentRemaining");
+    let listotherRemaining = document.querySelector("#otherRemaining");
+
+    listfoodRemaining.innerHTML = (listFood.value - (budgetItemsNew[0]?.foodCategory ?? 0));
+    listtransportationRemaining.innerHTML = (listTranspotation.value - (budgetItemsNew[0]?.transportationCategory ?? 0));
+    listenterteimentRemaining.innerHTML = (listEntertaiment.value - (budgetItemsNew[0]?.enterteimentCategory ?? 0));
+    listotherRemaining.innerHTML = (listOther.value - (budgetItemsNew[0]?.otherCategory ?? 0));
+
 
 
 });
