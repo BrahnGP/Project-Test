@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Budget Manager</title>
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+    <main id="dashboard">
+      
+
+      <section id="monthly-income">
+        <h1 class="header">BUDGET MANAGER</h1>
+        <label for="income">Monthly Income: $</label>
+        <input type="number" class="income-area" name="income" step="0.1" min="0" value="800.00" />
+      </section>
+
+      <section id="category-budgets">
+        <h2 class="subheader">SET CATEGORY BUDGETS</h2>
+
+        <article class="category" data-cat="food">
+          <header>
+            <span class="icon">🍕</span>
+            <h3>Food &amp; Dining</h3>
+          </header>
+          
+          <div class="budget-row">
+            <label>Budget:$</label>
+            <input type="number" class="budget-input" value="200" />
+          </div>
+          
+          <div class="spent-row">
+            <span class="spent">Spent: $180</span>
+          </div>
+
+          <div class="progress" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="90">
+            <div class="progress-bar" style="--progress: 90%; --color: #F89F5B;">
+              <span class="progress-text">90%</span>
+            </div>
+          </div>
+          <p class="remaining">Remaining: <span>$20</span></p>
+        </article>
+
+        <article class="category" data-cat="transport">
+          <header>
+            <span class="icon">🚌</span>
+            <h3>Transportation</h3>
+          </header>
+          
+          <div class="budget-row">
+            <label>Budget: $</label>
+            <input type="number" class="budget-input" value="80" />
+          </div>
+          
+          <div class="spent-row">
+            <span class="spent">Spent: $85</span>
+          </div>
+
+          <div class="progress" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="106">
+            <div class="progress-bar" style="--progress: 106%; --color: #9C3587;">
+              <span class="progress-text">106%</span>
+            </div>
+          </div>
+          <p class="over">Over by: $<span>5</span> ⚠️</p>
+        </article>
+      </section>
+
+      <nav id="budget-actions">
+        <button id="update-budgets">Update Budgets</button>
+        <button id="reset-all">Reset All</button>
+        <button id="reports" href="reports.html" id="reports-link">Reports</button>
+      </nav>
+    </main>
+  </body>
+</html>
