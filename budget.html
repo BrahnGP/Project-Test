@@ -4,28 +4,37 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Budget Manager</title>
+	<link rel="stylesheet" href="style.css">
   </head>
   <body>
-    <main id="budget-manager">
-      <h1>BUDGET MANAGER</h1>
+    <main id="dashboard">     
 
       <section id="monthly-income">
+		<h1 class="header">BUDGET MANAGER</h1>
         <label for="income">Monthly Income: $</label>
-        <input type="number" id="income" name="income" step="0.01" min="0" value="0" />
+        <input type="number" class="income-area" id="income" name="income" step="0.01" min="0" value="0" />
       </section>
 
       <section id="category-budgets">
-        <h2>SET CATEGORY BUDGETS</h2>
+        <h2 class="subheader">SET CATEGORY BUDGETS</h2>
 
         <article class="category" data-cat="food">
           <header>
             <span class="icon">🍕</span>
             <h3>Food &amp; Dining</h3>
           </header>
-          <p>Budget: $<input type="number" id="food-input" class="budget-input" value="0" />　 Spent: $<span id="foodSpend" class="spent">0</span></p>
+		  
+          <div class="budget-row">
+            <label>Budget:$</label>
+            <input type="number" id="food-input" class="budget-input" value="200" />
+          </div>
+          
+          <div class="spent-row">
+            <span class="spent" id="foodSpend">Spent: $180</span>
+          </div>
 
           <div class="progress" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="90">
-            <div class="progress-bar"></div>
+            <div class="progress-bar" style="--progress: 90%; --color: #F89F5B;"></div>
             <span id="foodProgress" class="progress-text">90%</span>
           </div>
           <p class="remaining">Remaining: $<span id="foodRemaining">0</span></p>
@@ -36,7 +45,11 @@
             <span class="icon">🚌</span>
             <h3>Transportation</h3>
           </header>
-          <p>Budget: $<input type="number" id="transportation-input" class="budget-input" value="0" />　 Spent: $<span id="transportationSpend" class="spent">0</span></p>
+          <p>Budget: $
+            <input type="number" id="transportation-input" class="budget-input" value="0" /> 
+            Spent: $
+            <span id="transportationSpend" class="spent">0</span>
+          </p>
 
           <div class="progress" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="106">
             <div class="progress-bar"></div>
@@ -50,7 +63,11 @@
             <span class="icon">🚌</span>
             <h3>Enterteiment</h3>
           </header>
-          <p>Budget: $<input type="number" id="enterteiment-input" class="entertainment-input" value="0" />　 Spent: $<span id="enterteimentSpend" class="spent">0</span></p>
+          <p>Budget: $
+            <input type="number" id="enterteiment-input" class="entertainment-input" value="0" /> 
+            Spent: $
+            <span id="enterteimentSpend" class="spent">0</span>
+          </p>
 
           <div class="progress" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="106">
             <div class="progress-bar"></div>
@@ -64,10 +81,14 @@
             <span class="icon">🚌</span>
             <h3>Other</h3>
           </header>
-          <p>Budget: $<input type="number" id="other-input" class="other-input" value="0" />　 Spent: $<span id="otherSpend" class="spent">0</span></p>
+          <p>Budget: $
+            <input type="number" id="other-input" class="other-input" value="0" /> 
+            Spent: $
+            <span id="otherSpend" class="spent">0</span>
+          </p>
 
           <div class="progress" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="106">
-            <div class="progress-bar"></div>
+            <div class="progress-bar" style="--progress: 106%; --color: #9C3587;"></div>
             <span id="otherProgress" class="progress-text">106%</span>
           </div>
           <p class="over">Remaining: $<span id="otherRemaining">0</span> ⚠️</p>

@@ -5,12 +5,13 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Expense Tracker Dashboard</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
   <main id="dashboard">
     <section id="summary">
-      <h1>MY EXPENSE TRACKER</h1>
+      <h1 class="header">MY EXPENSE TRACKER</h1>
 
       <p class="balance">
         Initial Balance: $<span id="initial-balance">0</span><br>
@@ -21,15 +22,15 @@
 
       </p>
 
-      <div class="progress" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="87"
+      <div class="progress" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="87">
         aria-label="Monthly budget used">
-        <div class="progress-bar" id="progress-bar"></div>
+        <div class="progress-bar" id="progress-bar" style="--progress: 87%;"></div>
         <span class="progress-text" id="progress-text">87% used</span>
       </div>
     </section>
 
     <section id="quick-status">
-      <h2>QUICK BUDGET STATUS</h2>
+      <h2 class="subheader">QUICK BUDGET STATUS</h2>
       <ul class="category-status-list">
         <li class="category-status-item">
           <span class="icon">🍕</span>
@@ -55,15 +56,15 @@
     </section>
 
     <section id="recent-expenses">
-      <h2>RECENT EXPENSES</h2>
+      <h2 class="subheader">RECENT EXPENSES</h2>
       <ul class="expense-list">
       </ul>
     </section>
 
     <nav id="actions">
-      <a href="add-expense.html" id="add-expense">Add Expense</a>
-      <a href="budget.html" id="set-budget">Set Budget</a>
-      <a href="#" id="view-all">View All</a>
+      <button href="add-expense.html" id="add-expense">Add Expense</button>
+      <button href="budget.html" id="set-budget">Set Budget</button>
+      <button href="#" id="view-all">View All</button>
     </nav>
   </main>
   <script src="javascript/index.js"></script>
