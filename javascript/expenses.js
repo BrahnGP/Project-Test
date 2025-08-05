@@ -29,6 +29,21 @@ function addExpenses(expenses) {
     }
     console.log("valor total final " + total);
     totalElement.textContent = "Total today: $" + amount.textContent;
+
+    cleanForm();
+
+}
+
+function cleanForm() {
+    let amountValue = document.querySelector("#amount");
+    let descriptionValue = document.querySelector("#description");
+    let categoryValue = document.querySelector("#category");
+    let dateValue = document.querySelector("#date");
+
+    amountValue.value = '';
+    descriptionValue.value = '';
+    categoryValue.value = '';
+    dateValue.value = '';
 }
 
 function addInformation() {

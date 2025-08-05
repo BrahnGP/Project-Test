@@ -163,7 +163,7 @@ section {
     align-items: center;
     justify-content: center;
     font-weight: bold;
-    color: white;
+    color: green;
     font-size: var(--font-sm);
     pointer-events: none;
     z-index: 1;
@@ -176,6 +176,21 @@ section {
 
 /* MAIN BUTTONS */
 button {
+    width: 120px;
+    height: 35px;
+    border: none;
+    border-radius: 50px;
+    color: white;
+    background: linear-gradient(135deg, var(--light-purple), var(--bright-pink));
+    font-size: var(--font-sm);
+    cursor: pointer;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    margin-left: var(--spacing-lg);
+}
+
+/* MAIN BUTTONS */
+a {
     width: 120px;
     height: 35px;
     border: none;
@@ -449,7 +464,7 @@ label {
 }
 
 .remaining {
-    color: var(--success-green);
+    color: black;
     font-weight: 500;
     margin: var(--spacing-sm) 0;
 }

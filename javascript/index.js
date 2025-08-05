@@ -1,5 +1,13 @@
 window.addEventListener("load", function () {
 
+    document.getElementById('add-expense').addEventListener('click', function () {
+        window.location.href = 'add-expense.html';
+    });
+
+    document.getElementById('set-budget').addEventListener('click', function () {
+        window.location.href = 'budget.html';
+    });
+
     // expenses onload 
 
     const savedItems = JSON.parse(localStorage.getItem("expenseItems") || "[]");
@@ -36,9 +44,10 @@ window.addEventListener("load", function () {
         const li = document.createElement("li");
         li.className = "expense-item";
         li.innerHTML = `
-                <span class="price"><b>Price:</b> ${item.amount}</span> - 
-                <span class="title"><b>Description:</b> ${item.description}</span> -
-                <span class="category"><b>Category:</b> ${item.category}</span> -
+              
+                <span class="price"><b>Price: </b><span style="color: red;">$${item.amount}</span></span>
+                <span class="title"><b>Description: $</b> ${item.description}</span> -
+                <span class="category"><b>Category: </b> ${item.category}</span> - <br>
                 <span class="date"><b>Purchase date:</b> ${item.date}</span> 
     `;
         $list.appendChild(li);
@@ -46,6 +55,7 @@ window.addEventListener("load", function () {
         //quick budget status
         const liBudget = document.createElement("li");
         li.className = "budget-item";
+        li.style = "height:100px";
 
         console.log("item category " + item.category);
 
@@ -210,21 +220,44 @@ window.addEventListener("load", function () {
 
 
     let amount = document.querySelector(".monthly-spend");
+    
     let progress = document.querySelector("#progress-text");
+
 
     let monthlyBudget = budgetItems[0]?.monthlyBudget ?? 500;
 
     console.log("saved " + savedTotal)
     console.log("current" + currentBalanceInt)
+    //progress bar
+    let progressBar = document.querySelector("#progress-bar");
+
+
+    console.log("el valor de progress es : " + currentBalanceInt);
 
     if (currentBalanceInt == 0) {
         progress.textContent = "0% Negative balance"; // o un mensaje más informativo si prefieres
+        progress.style = "color:red";
+        progressBar.style = "--progress: 0%";
         console.log("paso 1")
-    } else {
-        progress.textContent = ((savedTotal / currentBalanceInt) * 100).toFixed(2) + "% used";
-         console.log("paso 2")
-    }
-    amount.textContent = "This Month: Spent: $" + savedTotal + " / Budget: " + currentBalanceInt;
+    } else
+        if (((savedTotal / currentBalanceInt) * 100).toFixed(2) <= 100) {
+            progress.textContent = ((savedTotal / currentBalanceInt) * 100).toFixed(2) + "% used";
+            console.log("el porcentaje usado es : " + ((savedTotal / currentBalanceInt) * 100).toFixed(2) + "% used");
+            progressBar.style = "--progress: " + ((savedTotal / currentBalanceInt) * 100).toFixed(2) + "%";
+            console.log("paso 2")
+        }
+        else {
+            progress.textContent = "100% used / Over budget!";
+            progress.style = "color:red";
+            progressBar.style = "--progress: 100%";
+            console.log("paso 2")
+        }
+        
+    amount.innerHTML = `This Month: Spent: $<span id="monthly-spent">${savedTotal}</span> / Budget: <span id="monthly-budget">${currentBalanceInt}</span>`;
+
+        
+
+
 
     console.log("saved " + savedTotal + " current balance " + currentBalanceInt);
 });
