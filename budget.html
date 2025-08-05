@@ -1,75 +1,130 @@
 <!DOCTYPE html>
 <html lang="ja">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Budget Manager</title>
-    <link rel="stylesheet" href="style.css">
-  </head>
-  <body>
-    <main id="dashboard">
-      
 
-      <section id="monthly-income">
-        <h1 class="header">BUDGET MANAGER</h1>
-        <label for="income">Monthly Income: $</label>
-        <input type="number" class="income-area" name="income" step="0.1" min="0" value="800.00" />
-      </section>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Budget Manager</title>
+  <link rel="stylesheet" href="style.css">
+</head>
 
-      <section id="category-budgets">
-        <h2 class="subheader">SET CATEGORY BUDGETS</h2>
-        <article class="category" data-cat="food">
-          <header>
-            <span class="icon">🍕</span>
-            <h3>Food &amp; Dining</h3>
-          </header>
-          
-          <div class="budget-row">
-            <label>Budget:$</label>
-            <input type="number" class="budget-input" value="200" />
-          </div>
-          
-          <div class="spent-row">
-            <span class="spent">Spent: $180</span>
-          </div>
+<body>
+  <main id="dashboard">
 
-          <div class="progress" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="90">
-            <div class="progress-bar" style="--progress: 90%; --color: #F89F5B;">
-              <span class="progress-text">90%</span>
-            </div>
-          </div>
-          <p class="remaining">Remaining: <span>$20</span></p>
-        </article>
+    <section id="monthly-income">
+      <h1 class="header">BUDGET MANAGER</h1>
+      <label for="income">Monthly Income: $</label>
+      <input type="number" class="income-area" id="income" name="income" step="0.01" min="0" value="0" />
+    </section>
 
-        <article class="category" data-cat="transport">
-          <header>
-            <span class="icon">🚌</span>
-            <h3>Transportation</h3>
-          </header>
-          
-          <div class="budget-row">
-            <label>Budget: $</label>
-            <input type="number" class="budget-input" value="80" />
-          </div>
-          
-          <div class="spent-row">
-            <span class="spent">Spent: $85</span>
-          </div>
+    <section id="category-budgets">
+      <h2 class="subheader">SET CATEGORY BUDGETS</h2>
 
-          <div class="progress" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="106">
-            <div class="progress-bar" style="--progress: 106%; --color: #9C3587;">
-              <span class="progress-text">106%</span>
-            </div>
-          </div>
-          <p class="over">Over by: $<span>5</span> ⚠️</p>
-        </article>
-      </section>
+      <article class="category" data-cat="food">
+        <header>
+          <span class="icon">🍕</span>
+          <h3>Food &amp; Dining</h3>
+        </header>
 
-      <nav id="budget-actions">
-        <button id="update-budgets">Update Budgets</button>
-        <button id="reset-all">Reset All</button>
-        <button id="reports" href="reports.html" id="reports-link">Reports</button>
-      </nav>
-    </main>
-  </body>
+        <div class="budget-row">
+          <label for="food-input">Budget:$</label>
+          <input type="number" id="food-input" class="budget-input" value="200" />
+        </div>
+
+        <div class="spent-row">
+          Spent: $
+          <span class="spent" id="foodSpend"></span>
+        </div>
+
+        <div class="progress" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="90">
+          <div class="progress-bar" id="progressFoodElement">
+            <span id="foodProgress" class="progress-text">90%</span>
+          </div>
+        </div>
+        <p class="remaining">Remaining:$ <span id="foodRemaining">0</span></p>
+      </article>
+
+      <article class="category" data-cat="transport">
+        <header>
+          <span class="icon">🚌</span>
+          <h3>Transportation</h3>
+        </header>
+
+
+        <div class="budget-row">
+          <label for="transportation-input">Budget:$</label>
+          <input type="number" id="transportation-input" class="budget-input" value="0" />
+        </div>
+
+        <div class="spent-row">
+          Spent: $
+          <span id="transportationSpend" class="spent">0</span>
+        </div>
+
+        <div class="progress" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="106">
+          <div class="progress-bar" id="progressTransportationElement">
+            <span id="transportationProcess" class="progress-text">106%</span>
+          </div>
+        </div>
+        <p class="remaining">Remaining:$ <span id="transportationRemaining">0</span></p>
+      </article>
+
+      <article class="category" data-cat="entertainment">
+        <header>
+          <span class="icon">🚌</span>
+          <h3>Enterteiment</h3>
+        </header>
+
+        <div class="budget-row">
+          <label for="enterteiment-input">Budget:$ </label>
+          <input type="number" id="enterteiment-input" class="budget-input" value="0" />
+        </div>
+
+        <div class="spent-row">
+          Spent: $
+          <span id="enterteimentSpend" class="spent">0</span>
+        </div>
+
+        <div class="progress" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="106">
+          <div class="progress-bar" id="progressEnterteimentElement">
+            <span id="enterteimentProgress" class="progress-text">106%</span>
+          </div>
+        </div>
+        <p class="remaining">Remaining:$ <span id="enterteimentRemaining">0</span></p>
+      </article>
+
+      <article class="category" data-cat="other">
+        <header>
+          <span class="icon">🚌</span>
+          <h3>Other</h3>
+        </header>
+
+        <div class="budget-row">
+          <label for="other-input">Budget:$ </label>
+          <input type="number" id="other-input" class="other-input" value="0" />
+        </div>
+
+        <div class="spent-row">
+          Spent: $
+          <span id="otherSpend" class="spent">0</span>
+        </div>
+
+        <div class="progress" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="106">
+          <div class="progress-bar" style="--progress: 106%; --color: #9C3587;" id="progressOtherElement">
+            <span id="otherProgress" class="progress-text">106%</span>
+          </div>
+        </div>
+        <p class="remaining">Remaining:$ <span id="otherRemaining">0</span></p>
+      </article>
+    </section>
+
+
+    <nav id="budget-actions">
+      <button id="update-budgets" onclick="budget()">Update Budgets</button>
+      <button id="reset-all" type="reset" onclick="reset()">Reset All</button>
+    </nav>
+  </main>
+  <script src="javascript/budget.js"></script>
+</body>
+
 </html>
