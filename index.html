@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Expense Tracker Dashboard</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <main id="dashboard">
+    <section id="summary">
+      <h1 class="header">MY EXPENSE TRACKER</h1>
+
+      <p class="balance">
+        Initial Balance: $<span id="initial-balance">0</span><br>
+        Current Balance: $<span id="current-balance"></span>
+      </p>
+
+      <p class="monthly-spend">
+
+      </p>
+
+      <div class="progress" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="87"
+        aria-label="Monthly budget used">
+        <div class="progress-bar" id="progress-bar" style="--progress: 87%;">
+          <span class="progress-text" id="progress-text">87% used</span>
+        </div>
+      </div>
+    </section>
+
+    <section id="quick-status">
+      <h2 class="subheader">QUICK BUDGET STATUS</h2>
+      <ul class="category-status-list">
+        <li class="category-status-item">
+          <span class="icon">🍕</span>
+          Food & Dining: <span class="amount" id="food-span" data-cat="food">$180/$200</span>
+          <span class="state ok">✅ On track</span>
+        </li>
+        <li class="category-status-item">
+          <span class="icon">🚌</span>
+          Transportation: <span class="amount" id="transportation-span" data-cat="transport">$85/$80</span>
+          <span class="state over">⚠️ Over budget!</span>
+        </li>
+        <li class="category-status-item">
+          <span class="icon">🎮</span>
+          Enterteiment: <span class="amount" id="enterteiment-span" data-cat="enterteiment">$85/$80</span>
+          <span class="state over">⚠️ Over budget!</span>
+        </li>
+        <li class="category-status-item">
+          <span class="icon">🚌</span>
+          Other: <span class="amount" id="other-span" data-cat="other">$85/$80</span>
+          <span class="state over">⚠️ Over budget!</span>
+        </li>
+      </ul>
+    </section>
+
+    <section id="recent-expenses">
+      <h2 class="subheader">RECENT EXPENSES</h2>
+      <ul class="expense-list">
+      </ul>
+    </section>
+
+    <nav id="actions">
+      <button href="add-expense.html" id="add-expense">Add Expense</button>
+      <button href="budget.html" id="set-budget">Set Budget</button>
+    </nav>
+  </main>
+  <script src="javascript/index.js"></script>
+</body>
+
+</html>

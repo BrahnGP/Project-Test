@@ -21,9 +21,8 @@ This is a simple, team-based web application for tracking personal expenses. Use
 - `index.html`: Main Dashboard
 - `add-expense.html`: Add new expense
 - `budget.html`: Budget management
-- `css/`: Style files
-- `js/`: Logic functions
-- `sample-data.js`: Test data
+- `style.css`: Style files
+- `javascript/`: Logic functions
 
 ## Team Branch Structure
 
@@ -33,7 +32,7 @@ Each contributor works on a specific branch according to their role.
 |-------------------------|--------------------|
 | HTML Structure Developer | `html-structure`   | (Ryo Susuki & Kaoru Hosoda)
 | CSS Designer             | `css-design`       | (Artem Kovalskyi)
-| JavaScript Developer     | `js-functions`     | (Alejandro Lessa)
+| JavaScript Developer     | `js-functions`     | (Alejandro Mora)
 | Content & Testing Lead   | `content-testing`  | (Brahndon Guajardo)
 
 ## Collaboration Guidelines
@@ -43,4 +42,3 @@ Each contributor works on a specific branch according to their role.
 3. Once a task is complete, create a pull request into `main`.
 4. The project manager will review and approve merges.
 5. Final production-ready code lives only in `main`.
-
